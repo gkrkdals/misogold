@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 export default function FloatingWidgets() {
   const [isOpen, setIsOpen] = useState(true);
@@ -26,7 +27,7 @@ export default function FloatingWidgets() {
         <>
           {/* 1. Phone Call Action */}
           <a
-            href="tel:010-7634-2231"
+            href="tel:010-6655-2299"
             className="flex h-10 w-10 items-center justify-center rounded-full bg-gold text-white shadow-xl hover:bg-gold-dark hover:scale-110 transition-all duration-200"
             title="전화 문의하기"
           >
@@ -48,10 +49,10 @@ export default function FloatingWidgets() {
           </button>
 
           {/* 3. Naver Talk Talk (Message Widget) */}
+          {/* 미소금거래소 톡톡 채널 준비 전까지 클릭 이동 임시 비활성화.
+              복원 시 아래에 href / target="_blank" / rel="noopener noreferrer" 다시 추가 */}
           <a
-            href="https://talk.naver.com/ct/w9ehxwv?frm=home"
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={(event) => event.preventDefault()}
             className="flex h-10 w-10 items-center justify-center rounded-full bg-gold text-white shadow-xl hover:bg-gold-dark hover:scale-110 transition-all duration-200"
             title="톡톡 상담하기"
           >
@@ -62,15 +63,17 @@ export default function FloatingWidgets() {
 
           {/* 4. Naver Map Link (Green Circle Button) */}
           <a
-            href="https://map.naver.com/p/entry/place/2040610373?placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607041746%26locale%3Dko%26svcName%3Dmap_pcv5"
+            href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EA%B5%AC%EB%A6%AC%EC%8B%9C%20%EC%9D%B4%EB%AC%B8%EC%95%88%EB%A1%9C%2095%20%ED%95%B4%EC%9B%90%EB%B9%8C%EB%94%A9"
             target="_blank"
             rel="noopener noreferrer"
             className="flex h-10 w-10 items-center justify-center rounded-full shadow-xl hover:scale-110 transition-all duration-200 cursor-pointer overflow-hidden"
             title="네이버 지도에서 보기"
           >
-            <img
+            <Image
               src="/naver-map-icon.png"
               alt="네이버 지도"
+              width={40}
+              height={40}
               className="w-full h-full object-cover"
             />
           </a>

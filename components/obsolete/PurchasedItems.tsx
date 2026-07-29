@@ -126,7 +126,7 @@ export default function PurchasedItems() {
 
               <div className="mt-6 pt-4 border-t border-zinc-100 flex justify-end">
                 <a
-                  href="tel:010-7634-2231"
+                  href="tel:010-6655-2299"
                   className="text-xs font-semibold text-gold group-hover:text-gold-dark flex items-center gap-1 cursor-pointer"
                 >
                   시세 및 매입 상담 문의 <span className="transition-transform group-hover:translate-x-1">→</span>

@@ -24,9 +24,9 @@ export default function Footer() {
           <h4 className="text-sm font-bold text-zinc-900 tracking-wider">사업자 정보</h4>
           <ul className="space-y-2">
             <li>상호명: 미소금거래소</li>
-            <li>대표자: 전진호</li>
-            <li>사업자등록번호: 271-10-03331</li>
-            <li>소재지: 경기도 이천시 이섭대천로 1273(창전동), 1층 101호</li>
+            <li>대표자: 박다미</li>
+            <li>사업자등록번호: 345-75-00629</li>
+            <li>소재지: 경기도 구리시 이문안로 95, 104호(수택동, 해원빌딩)</li>
           </ul>
         </div>
 
@@ -34,8 +34,8 @@ export default function Footer() {
         <div className="space-y-4 text-xs">
           <h4 className="text-sm font-bold text-zinc-900 tracking-wider">고객 센터</h4>
           <ul className="space-y-2">
-            <li className="text-base font-bold text-gold-dark">대표전화: 031-636-3060 / 010-7634-2231</li>
-            <li>이메일: junjingold@naver.com</li>
+            <li className="text-base font-bold text-gold-dark">대표전화: 010-6655-2299</li>
+            <li>이메일: misogold2299@naver.com</li>
           </ul>
         </div>
 

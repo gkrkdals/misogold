@@ -3,8 +3,8 @@
 import React from "react";
 
 export default function Directions() {
-  const address = "경기도 이천시 이섭대천로 1273(창전동), 1층 101호";
-  const naverMapUrl = "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%9D%B4%EC%B2%9C%EC%8B%9C%20%EC%9D%B4%EC%84%AD%EB%8C%80%EC%B2%9C%EB%A1%9C%201273%20(%EC%B0%BD%EC%A0%84%EB%8F%99)%2C%201%EC%B8%B5%20101%ED%98%B8";
+  const address = "경기도 구리시 이문안로 95, 104호(수택동, 해원빌딩)";
+  const naverMapUrl = "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EA%B5%AC%EB%A6%AC%EC%8B%9C%20%EC%9D%B4%EB%AC%B8%EC%95%88%EB%A1%9C%2095%20%ED%95%B4%EC%9B%90%EB%B9%8C%EB%94%A9";
 
   return (
     <section id="directions" className="py-24 bg-background border-t border-zinc-200">
@@ -57,9 +57,12 @@ export default function Directions() {
                 <p className="mt-2 text-lg font-extrabold text-zinc-900 leading-relaxed">
                   {address}
                 </p>
-                <p className="mt-1 text-sm text-zinc-500 font-semibold">
-                  * 주차정보: 무료주차 가능
+                <p className="mt-1 text-base font-bold text-gold-dark">
+                  (수택동 장스365의원/럭키아파트 사거리앞)
                 </p>
+                {/* <p className="mt-1 text-sm text-zinc-500 font-semibold">
+                  * 주차정보: 무료주차 가능
+                </p> */}
               </div>
 
               {/* Business Hours */}
@@ -70,7 +73,7 @@ export default function Directions() {
                     <span className="font-bold">매일</span>
                     <span className="font-mono font-bold text-zinc-900">09:00 - 19:30</span>
                   </div>
-                  <div className="py-2 text-emerald-600 font-bold text-xs">
+                  <div className="py-2 text-emerald-600 font-bold text-base">
                     * 365일 휴일없이 영업합니다^^
                   </div>
                 </div>
@@ -81,10 +84,7 @@ export default function Directions() {
                 <h4 className="text-xs font-bold text-gold uppercase tracking-wider">전화번호</h4>
                 <div className="mt-2 space-y-1">
                   <p className="text-xl font-extrabold text-zinc-800 font-mono">
-                    031-636-3060
-                  </p>
-                  <p className="text-xl font-extrabold text-zinc-800 font-mono">
-                    010-7634-2231
+                    010-6655-2299
                   </p>
                 </div>
               </div>
@@ -94,13 +94,13 @@ export default function Directions() {
             {/* Quick action buttons */}
             <div className="grid grid-cols-2 gap-4 pt-6 border-t border-zinc-200">
               <a
-                href="tel:010-7634-2231"
+                href="tel:010-6655-2299"
                 className="flex items-center justify-center gap-2 rounded-xl bg-gold py-3 text-center text-sm font-bold text-white shadow-sm hover:bg-gold-dark transition-all duration-150"
               >
                 전화 바로 걸기
               </a>
               <a
-                href="sms:010-7634-2231?body=안녕하세요. 금 시세 문의드립니다."
+                href="sms:010-6655-2299?body=안녕하세요. 금 시세 문의드립니다."
                 className="flex items-center justify-center gap-2 rounded-xl bg-zinc-800 py-3 text-center text-sm font-bold text-white shadow-sm hover:bg-zinc-700 transition-all duration-150"
               >
                 문자 문의하기

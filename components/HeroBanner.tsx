@@ -68,16 +68,18 @@ export default function HeroBanner({ initialPrices }: HeroBannerProps) {
         >
           {/* Logo and Title above the table */}
           <div id="today-price" className="flex flex-col items-center gap-2">
-            <span className="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">
-              미소<span className="text-gold">골드</span>
-            </span>
+            <img
+              src="/miso-logo.png"
+              alt="미소금거래소"
+              className="mt-2 h-24 sm:h-28 w-auto"
+            />
             <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-zinc-700">
               오늘의 시세표
             </h2>
           </div>
 
           {/* Unit and Date Row */}
-          <div className="flex justify-between items-center w-full text-sm sm:text-base font-semibold text-zinc-500 mb-2 px-1">
+          <div className="flex justify-between items-center w-full text-lg sm:text-xl font-semibold text-zinc-500 mb-2 px-1">
             <span>단위 : 3.75g 한돈 기준</span>
             <span>{todayDate}</span>
           </div>
@@ -100,6 +102,11 @@ export default function HeroBanner({ initialPrices }: HeroBannerProps) {
                     <th scope="col" className="px-2 py-1.5 sm:px-6 sm:py-2.5 text-[11px] sm:text-[16px] xl:text-[18px] font-bold tracking-wider text-zinc-900">
                       <span className="hidden sm:inline">내가 팔 때</span>
                       <span className="sm:hidden">내가 팔 때</span>
+                    </th>
+                  </tr>
+                  <tr className="border-b border-gold/30">
+                    <th colSpan={3} className="px-2 py-2 sm:py-2.5 text-[12px] sm:text-[16px] xl:text-[17px] font-bold tracking-tight text-gold-dark">
+                      * 추가적인 차감 없이 시세표 그대로 매입합니다 *
                     </th>
                   </tr>
                 </thead>
@@ -125,6 +132,20 @@ export default function HeroBanner({ initialPrices }: HeroBannerProps) {
                   )}
                 </tbody>
               </table>
+            </div>
+          </div>
+
+          {/* Purchase promise notice */}
+          <div className="mt-6 text-center">
+            <h3 className="text-lg sm:text-2xl font-extrabold tracking-tight text-zinc-900">
+              최고가 매입 최저가 판매로 정성껏 모시겠습니다
+            </h3>
+            <div className="mt-3 rounded-xl border-2 border-gold/50 px-3 py-5 sm:px-8 sm:py-6 text-[13px] sm:text-lg font-bold text-zinc-800">
+              <p>순금, 18K, 14K 모든 제품 매입 및 할인가 판매</p>
+              <p>치금, 은수저 등 모든 금/은제품 매입합니다.</p>
+              <p>GIA, 우신, 현대 다이아매입전문</p>
+              <p>감정서 없는 다이아몬드도 고가 매입해드립니다.</p>
+              <p>작은 양이라도 정성껏 매입합니다.</p>
             </div>
           </div>
         </div>
@@ -158,7 +179,7 @@ export default function HeroBanner({ initialPrices }: HeroBannerProps) {
             </div>
 
             <div>
-              <div className="flex justify-between items-center w-full text-sm sm:text-base font-semibold text-zinc-700 mb-3 px-2 sm:px-6">
+              <div className="flex justify-between items-center w-full text-lg sm:text-xl font-semibold text-zinc-700 mb-3 px-2 sm:px-6">
                 <span>단위 : 3.75g 한돈 기준</span>
                 <span>{todayDate}</span>
               </div>
@@ -179,6 +200,11 @@ export default function HeroBanner({ initialPrices }: HeroBannerProps) {
                         <th scope="col" className="px-2 py-2 sm:px-6 sm:py-3 text-[13px] sm:text-[18px] lg:text-[20px] font-bold tracking-wider text-zinc-900">
                           <span className="hidden sm:inline">내가 팔 때</span>
                           <span className="sm:hidden">내가 팔 때</span>
+                        </th>
+                      </tr>
+                      <tr className="border-b border-gold/25">
+                        <th colSpan={3} className="px-2 py-2.5 sm:py-3 text-[14px] sm:text-[18px] lg:text-[19px] font-bold tracking-tight text-gold-dark">
+                          * 추가적인 차감 없이 시세표 그대로 매입합니다 *
                         </th>
                       </tr>
                     </thead>
@@ -204,6 +230,20 @@ export default function HeroBanner({ initialPrices }: HeroBannerProps) {
                       )}
                     </tbody>
                   </table>
+                </div>
+              </div>
+
+              {/* Purchase promise notice */}
+              <div className="mt-8 text-center">
+                <h3 className="text-xl sm:text-3xl font-extrabold tracking-tight text-zinc-900">
+                  최고가 매입 최저가 판매로 정성껏 모시겠습니다
+                </h3>
+                <div className="mt-4 rounded-xl border-2 border-gold/50 px-3 py-5 sm:px-8 sm:py-7 text-[14px] sm:text-xl font-bold text-zinc-800">
+                  <p>순금, 18K, 14K 모든 제품 매입 및 할인가 판매</p>
+                  <p>치금, 은수저 등 모든 금/은제품 매입합니다.</p>
+                  <p>GIA, 우신, 현대 다이아매입전문</p>
+                  <p>감정서 없는 다이아몬드도 고가 매입해드립니다.</p>
+                  <p>작은 양이라도 정성껏 매입합니다.</p>
                 </div>
               </div>
             </div>

@@ -83,9 +83,11 @@ export default function Header() {
             onClick={() => scrollToSection("hero")}
             className="flex items-center focus:outline-none cursor-pointer"
           >
-            <span className="py-6 text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-900">
-              미소<span className="text-gold">골드</span>
-            </span>
+            <img
+              src="/miso-logo.png"
+              alt="미소금거래소"
+              className="h-14 sm:h-16 w-auto py-1"
+            />
           </button>
         </div>
 
@@ -109,7 +111,7 @@ export default function Header() {
         {/* Contact/CTA */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a
-            href="tel:010-7634-2231"
+            href="tel:010-6655-2299"
             className="rounded-full bg-gold px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gold-dark transition-colors duration-200"
           >
             전화 상담 문의
@@ -178,7 +180,7 @@ export default function Header() {
               오시는 길
             </button>
             <a
-              href="tel:010-7634-2231"
+              href="tel:010-6655-2299"
               className="mt-4 block w-full text-center rounded-lg bg-gold py-2.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-gold-dark"
             >
               전화 상담 문의
