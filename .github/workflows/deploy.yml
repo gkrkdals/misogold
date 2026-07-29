@@ -1,0 +1,86 @@
+name: 🚀 Deploy to Remote Docker Host
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: misogold:latest
+      CONTAINER_NAME: misogold
+    steps:
+      # 1️⃣ Checkout source
+      - uses: actions/checkout@v4
+
+      # 2️⃣ Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      # 3️⃣ Install dependencies
+      - name: Install dependencies
+        run: |
+          npm config set fetch-retries 5
+          npm config set fetch-retry-mintimeout 20000
+          npm config set fetch-retry-maxtimeout 120000
+          npm ci
+
+      # 3.5 Generate Prisma Client
+      - name: Generate Prisma Client
+        run: npx prisma generate
+
+      # 4️⃣ Build Next.js app
+      - name: Build Next.js
+        run: npm run build
+
+      # 5️⃣ Build Docker image
+      - name: Build Docker image
+        run: docker build -t ${{ env.IMAGE_NAME }} .
+
+      # 6️⃣ Export Docker image to tar.gz
+      - name: Export Docker image
+        run: |
+          docker save ${{ env.IMAGE_NAME }} | gzip > misogold.tar.gz
+
+      # 7️⃣ Install sshpass (for password auth)
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      # 8️⃣ Copy image to remote host
+      - name: Copy image to remote host
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PASS: ${{ secrets.SSH_PASSWORD }}
+        run: |
+          sshpass -p "$SSH_PASS" scp -o StrictHostKeyChecking=no misogold.tar.gz $SSH_USER@$SSH_HOST:/tmp/misogold.tar.gz
+
+      # 9️⃣ Deploy on remote host
+      - name: Deploy on remote host
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PASS: ${{ secrets.SSH_PASSWORD }}
+        run: |
+          sshpass -p "$SSH_PASS" ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST <<'EOF'
+            # Load the image
+            gunzip -c /tmp/misogold.tar.gz | docker load
+
+            # Stop & remove existing container (if any)
+            docker rm -f ${{ env.CONTAINER_NAME }} || true
+
+            # Run new container with persistent volume for uploaded showcase images
+            docker run -d \
+              --name ${{ env.CONTAINER_NAME }} \
+              -p 8080:3000 \
+              --env-file /home/devuser/app/.env \
+              -v misogold_uploads:/app/uploads_data \
+              ${{ env.IMAGE_NAME }}
+
+            # Cleanup
+            rm -f /tmp/misogold.tar.gz
+          EOF
