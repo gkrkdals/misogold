@@ -88,6 +88,9 @@ export default function Header() {
               alt="미소금거래소"
               className="h-14 sm:h-16 w-auto py-1"
             />
+            <span className="ml-2 text-lg sm:text-xl font-extrabold tracking-tight text-gold-dark">
+              미소금거래소
+            </span>
           </button>
         </div>
 

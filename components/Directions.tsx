@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Directions() {
   const address = "경기도 구리시 이문안로 95, 104호(수택동, 해원빌딩)";
-  const naverMapUrl = "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EA%B5%AC%EB%A6%AC%EC%8B%9C%20%EC%9D%B4%EB%AC%B8%EC%95%88%EB%A1%9C%2095%20%ED%95%B4%EC%9B%90%EB%B9%8C%EB%94%A9";
+  const naverMapUrl = "https://naver.me/GVVx30K2";
 
   return (
     <section id="directions" className="py-24 bg-background border-t border-zinc-200">
@@ -57,7 +57,7 @@ export default function Directions() {
                 <p className="mt-2 text-lg font-extrabold text-zinc-900 leading-relaxed">
                   {address}
                 </p>
-                <p className="mt-1 text-base font-bold text-gold-dark">
+                <p className="mt-1 text-xs sm:text-base font-bold text-gold-dark">
                   (수택동 장스365의원/럭키아파트 사거리앞)
                 </p>
                 {/* <p className="mt-1 text-sm text-zinc-500 font-semibold">

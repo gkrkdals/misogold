@@ -63,7 +63,7 @@ export default function FloatingWidgets() {
 
           {/* 4. Naver Map Link (Green Circle Button) */}
           <a
-            href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EA%B5%AC%EB%A6%AC%EC%8B%9C%20%EC%9D%B4%EB%AC%B8%EC%95%88%EB%A1%9C%2095%20%ED%95%B4%EC%9B%90%EB%B9%8C%EB%94%A9"
+            href="https://naver.me/GVVx30K2"
             target="_blank"
             rel="noopener noreferrer"
             className="flex h-10 w-10 items-center justify-center rounded-full shadow-xl hover:scale-110 transition-all duration-200 cursor-pointer overflow-hidden"

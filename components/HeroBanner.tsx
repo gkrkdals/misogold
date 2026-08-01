@@ -53,26 +53,42 @@ export default function HeroBanner({ initialPrices }: HeroBannerProps) {
   };
 
   return (
-    <section id="hero" className="relative bg-white overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-24">
+    <section id="hero" className="relative bg-white overflow-hidden pb-16 sm:pb-24">
 
-      <div className="relative mx-auto max-w-4xl px-6 lg:px-8 flex flex-col items-center gap-6 w-full z-10">
-        {/* 1. Header Badge */}
-        <div className="inline-flex items-center gap-x-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs sm:text-sm font-semibold leading-6 text-gold shadow-lg shadow-gold/5">
-          ✨ 전국 최고가 당일 귀금속 매입 보장
+      {/* Brand hero banner */}
+      <div className="w-full bg-gradient-to-b from-[#faf6ec] via-[#f6efdd] to-[#f1e7cf]">
+        <div className="mx-auto max-w-4xl px-6 py-10 sm:py-16 flex flex-col items-center gap-6 sm:gap-8">
+          <img
+            src="/hero-gold-bars.png"
+            alt="골드바"
+            className="w-48 sm:w-72 h-auto drop-shadow-[0_12px_24px_rgba(166,132,58,0.25)]"
+          />
+          <img
+            src="/hero-title.png"
+            alt="미소금거래소"
+            className="w-64 sm:w-[28rem] h-auto"
+          />
         </div>
+      </div>
 
+      <div className="relative mx-auto max-w-4xl px-6 lg:px-8 flex flex-col items-center gap-6 w-full z-10 pt-10 sm:pt-14">
         <div
-          className="w-full cursor-zoom-in bg-white border border-zinc-200 rounded-2xl p-4 sm:p-6 shadow-xl"
+          className="w-full cursor-zoom-in bg-white border border-gold/50 rounded-2xl p-4 sm:p-6"
           onDoubleClick={() => setIsZoomOpen(true)}
           title="더블클릭해서 확대 보기"
         >
           {/* Logo and Title above the table */}
           <div id="today-price" className="flex flex-col items-center gap-2">
-            <img
-              src="/miso-logo.png"
-              alt="미소금거래소"
-              className="mt-2 h-24 sm:h-28 w-auto"
-            />
+            <div className="mt-2 flex items-center gap-3">
+              <img
+                src="/miso-logo.png"
+                alt="미소금거래소"
+                className="h-24 sm:h-28 w-auto"
+              />
+              <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-gold-dark">
+                미소금거래소
+              </span>
+            </div>
             <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-zinc-700">
               오늘의 시세표
             </h2>
@@ -80,7 +96,7 @@ export default function HeroBanner({ initialPrices }: HeroBannerProps) {
 
           {/* Unit and Date Row */}
           <div className="flex justify-between items-center w-full text-lg sm:text-xl font-semibold text-zinc-500 mb-2 px-1">
-            <span>단위 : 3.75g 한돈 기준</span>
+            <span className="text-xs sm:text-sm">단위 : 3.75g 한돈 기준</span>
             <span>{todayDate}</span>
           </div>
 
@@ -137,8 +153,8 @@ export default function HeroBanner({ initialPrices }: HeroBannerProps) {
 
           {/* Purchase promise notice */}
           <div className="mt-6 text-center">
-            <h3 className="text-lg sm:text-2xl font-extrabold tracking-tight text-zinc-900">
-              최고가 매입 최저가 판매로 정성껏 모시겠습니다
+            <h3 className="text-base sm:text-2xl font-extrabold tracking-tight text-zinc-900">
+              최고가 매입 최저가 판매로<br className="sm:hidden" /> 정성껏 모시겠습니다
             </h3>
             <div className="mt-3 rounded-xl border-2 border-gold/50 px-3 py-5 sm:px-8 sm:py-6 text-[13px] sm:text-lg font-bold text-zinc-800">
               <p>순금, 18K, 14K 모든 제품 매입 및 할인가 판매</p>
@@ -180,7 +196,7 @@ export default function HeroBanner({ initialPrices }: HeroBannerProps) {
 
             <div>
               <div className="flex justify-between items-center w-full text-lg sm:text-xl font-semibold text-zinc-700 mb-3 px-2 sm:px-6">
-                <span>단위 : 3.75g 한돈 기준</span>
+                <span className="text-xs sm:text-sm">단위 : 3.75g 한돈 기준</span>
                 <span>{todayDate}</span>
               </div>
 
@@ -235,8 +251,8 @@ export default function HeroBanner({ initialPrices }: HeroBannerProps) {
 
               {/* Purchase promise notice */}
               <div className="mt-8 text-center">
-                <h3 className="text-xl sm:text-3xl font-extrabold tracking-tight text-zinc-900">
-                  최고가 매입 최저가 판매로 정성껏 모시겠습니다
+                <h3 className="text-lg sm:text-3xl font-extrabold tracking-tight text-zinc-900">
+                  최고가 매입 최저가 판매로<br className="sm:hidden" /> 정성껏 모시겠습니다
                 </h3>
                 <div className="mt-4 rounded-xl border-2 border-gold/50 px-3 py-5 sm:px-8 sm:py-7 text-[14px] sm:text-xl font-bold text-zinc-800">
                   <p>순금, 18K, 14K 모든 제품 매입 및 할인가 판매</p>
