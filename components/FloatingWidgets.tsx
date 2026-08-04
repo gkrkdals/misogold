@@ -49,10 +49,10 @@ export default function FloatingWidgets() {
           </button>
 
           {/* 3. Naver Talk Talk (Message Widget) */}
-          {/* 미소금거래소 톡톡 채널 준비 전까지 클릭 이동 임시 비활성화.
-              복원 시 아래에 href / target="_blank" / rel="noopener noreferrer" 다시 추가 */}
           <a
-            onClick={(event) => event.preventDefault()}
+            href="https://talk.naver.com/WA4FQUI"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex h-10 w-10 items-center justify-center rounded-full bg-gold text-white shadow-xl hover:bg-gold-dark hover:scale-110 transition-all duration-200"
             title="톡톡 상담하기"
           >

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -83,14 +84,25 @@ export default function Header() {
             onClick={() => scrollToSection("hero")}
             className="flex items-center focus:outline-none cursor-pointer"
           >
-            <img
+            <Image
               src="/miso-logo.png"
               alt="미소금거래소"
+              width={327}
+              height={335}
+              priority
               className="h-14 sm:h-16 w-auto py-1"
             />
             <span className="ml-2 text-lg sm:text-xl font-extrabold tracking-tight text-gold-dark">
               미소금거래소
             </span>
+            <Image
+              src="/hero-gold-bars.png"
+              alt=""
+              aria-hidden="true"
+              width={727}
+              height={584}
+              className="ml-2 h-10 sm:h-12 w-auto"
+            />
           </button>
         </div>
 

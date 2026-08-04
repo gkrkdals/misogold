@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import GoldChart from "./GoldChart";
 
 interface PriceItem {
@@ -55,22 +56,6 @@ export default function HeroBanner({ initialPrices }: HeroBannerProps) {
   return (
     <section id="hero" className="relative bg-white overflow-hidden pb-16 sm:pb-24">
 
-      {/* Brand hero banner */}
-      <div className="w-full bg-gradient-to-b from-[#faf6ec] via-[#f6efdd] to-[#f1e7cf]">
-        <div className="mx-auto max-w-4xl px-6 py-10 sm:py-16 flex flex-col items-center gap-6 sm:gap-8">
-          <img
-            src="/hero-gold-bars.png"
-            alt="골드바"
-            className="w-48 sm:w-72 h-auto drop-shadow-[0_12px_24px_rgba(166,132,58,0.25)]"
-          />
-          <img
-            src="/hero-title.png"
-            alt="미소금거래소"
-            className="w-64 sm:w-[28rem] h-auto"
-          />
-        </div>
-      </div>
-
       <div className="relative mx-auto max-w-4xl px-6 lg:px-8 flex flex-col items-center gap-6 w-full z-10 pt-10 sm:pt-14">
         <div
           className="w-full cursor-zoom-in bg-white border border-gold/50 rounded-2xl p-4 sm:p-6"
@@ -79,15 +64,27 @@ export default function HeroBanner({ initialPrices }: HeroBannerProps) {
         >
           {/* Logo and Title above the table */}
           <div id="today-price" className="flex flex-col items-center gap-2">
-            <div className="mt-2 flex items-center gap-3">
-              <img
+            <div className="mt-2 flex items-center gap-2 sm:gap-3">
+              <Image
                 src="/miso-logo.png"
                 alt="미소금거래소"
-                className="h-24 sm:h-28 w-auto"
+                width={327}
+                height={335}
+                priority
+                className="h-20 sm:h-28 w-auto"
               />
-              <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-gold-dark">
+              <span className="whitespace-nowrap text-xl sm:text-3xl font-extrabold tracking-tight text-gold-dark">
                 미소금거래소
               </span>
+              <Image
+                src="/hero-gold-bars.png"
+                alt=""
+                aria-hidden="true"
+                width={727}
+                height={584}
+                priority
+                className="h-12 sm:h-20 w-auto"
+              />
             </div>
             <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-zinc-700">
               오늘의 시세표
@@ -106,22 +103,22 @@ export default function HeroBanner({ initialPrices }: HeroBannerProps) {
               <table className="min-w-full text-center">
                 <thead>
                   <tr className="bg-transparent text-zinc-500 font-sans border-t border-b border-gold/30">
-                    <th scope="col" className="px-2 py-1.5 sm:px-6 sm:py-2.5 text-[11px] sm:text-[16px] xl:text-[18px] font-bold tracking-wider text-gold-dark">
+                    <th scope="col" className="px-2 py-1 sm:px-6 sm:py-1.5 text-[11px] sm:text-[16px] xl:text-[18px] font-bold tracking-wider text-gold-dark">
                       <span className="hidden sm:inline">구분 (품목)</span>
                   
                       <span className="sm:hidden">품목</span>
                     </th>
-                    <th scope="col" className="px-2 py-1.5 sm:px-6 sm:py-2.5 text-[11px] sm:text-[16px] xl:text-[18px] font-bold tracking-wider text-zinc-900">
+                    <th scope="col" className="px-2 py-1 sm:px-6 sm:py-1.5 text-[11px] sm:text-[16px] xl:text-[18px] font-bold tracking-wider text-zinc-900">
                       <span className="hidden sm:inline">내가 살 때</span>
                       <span className="sm:hidden">내가 살 때</span>
                     </th>
-                    <th scope="col" className="px-2 py-1.5 sm:px-6 sm:py-2.5 text-[11px] sm:text-[16px] xl:text-[18px] font-bold tracking-wider text-zinc-900">
+                    <th scope="col" className="px-2 py-1 sm:px-6 sm:py-1.5 text-[11px] sm:text-[16px] xl:text-[18px] font-bold tracking-wider text-zinc-900">
                       <span className="hidden sm:inline">내가 팔 때</span>
                       <span className="sm:hidden">내가 팔 때</span>
                     </th>
                   </tr>
                   <tr className="border-b border-gold/30">
-                    <th colSpan={3} className="px-2 py-2 sm:py-2.5 text-[12px] sm:text-[16px] xl:text-[17px] font-bold tracking-tight text-gold-dark">
+                    <th colSpan={3} className="px-2 py-1.5 sm:py-2 text-[12px] sm:text-[16px] xl:text-[17px] font-bold tracking-tight text-gold-dark">
                       * 추가적인 차감 없이 시세표 그대로 매입합니다 *
                     </th>
                   </tr>
@@ -136,11 +133,11 @@ export default function HeroBanner({ initialPrices }: HeroBannerProps) {
                   ) : (
                     prices.map((item, index) => (
                       <tr key={index} className="hover:bg-amber-50 transition-colors duration-150">
-                        <td className="whitespace-nowrap px-2 py-2 sm:px-6 sm:py-3 text-[11px] sm:text-[16px] xl:text-[18px] font-semibold text-gold-dark">{item.type}</td>
-                        <td className="whitespace-nowrap px-2 py-2 sm:px-6 sm:py-3 text-[11px] sm:text-[16px] xl:text-[18px] font-extrabold text-zinc-900">
+                        <td className="whitespace-nowrap px-2 py-1.5 sm:px-6 sm:py-2 text-[11px] sm:text-[16px] xl:text-[18px] font-semibold text-gold-dark">{item.type}</td>
+                        <td className="whitespace-nowrap px-2 py-1.5 sm:px-6 sm:py-2 text-[11px] sm:text-[16px] xl:text-[18px] font-extrabold text-zinc-900">
                           {formatPrice(item.buyPrice)}
                         </td>
-                        <td className="whitespace-nowrap px-2 py-2 sm:px-6 sm:py-3 text-[11px] sm:text-[16px] xl:text-[18px] font-extrabold text-zinc-900">
+                        <td className="whitespace-nowrap px-2 py-1.5 sm:px-6 sm:py-2 text-[11px] sm:text-[16px] xl:text-[18px] font-extrabold text-zinc-900">
                           {formatPrice(item.sellPrice)}
                         </td>
                       </tr>
@@ -156,7 +153,7 @@ export default function HeroBanner({ initialPrices }: HeroBannerProps) {
             <h3 className="text-base sm:text-2xl font-extrabold tracking-tight text-zinc-900">
               최고가 매입 최저가 판매로<br className="sm:hidden" /> 정성껏 모시겠습니다
             </h3>
-            <div className="mt-3 rounded-xl border-2 border-gold/50 px-3 py-5 sm:px-8 sm:py-6 text-[13px] sm:text-lg font-bold text-zinc-800">
+            <div className="mt-3 rounded-xl border-2 border-gold/50 px-3 py-5 sm:px-8 sm:py-6 text-[11px] sm:text-[15px] font-bold text-zinc-800">
               <p>순금, 18K, 14K 모든 제품 매입 및 할인가 판매</p>
               <p>치금, 은수저 등 모든 금/은제품 매입합니다.</p>
               <p>GIA, 우신, 현대 다이아매입전문</p>
@@ -254,7 +251,7 @@ export default function HeroBanner({ initialPrices }: HeroBannerProps) {
                 <h3 className="text-lg sm:text-3xl font-extrabold tracking-tight text-zinc-900">
                   최고가 매입 최저가 판매로<br className="sm:hidden" /> 정성껏 모시겠습니다
                 </h3>
-                <div className="mt-4 rounded-xl border-2 border-gold/50 px-3 py-5 sm:px-8 sm:py-7 text-[14px] sm:text-xl font-bold text-zinc-800">
+                <div className="mt-4 rounded-xl border-2 border-gold/50 px-3 py-5 sm:px-8 sm:py-7 text-[12px] sm:text-[17px] font-bold text-zinc-800">
                   <p>순금, 18K, 14K 모든 제품 매입 및 할인가 판매</p>
                   <p>치금, 은수저 등 모든 금/은제품 매입합니다.</p>
                   <p>GIA, 우신, 현대 다이아매입전문</p>
