@@ -5,20 +5,11 @@ import React from "react";
 export default function Facilities() {
   const items = [
     {
-      name: "예약",
+      name: "무료주차",
       icon: (
         <svg className="w-8 h-8 text-zinc-500 group-hover:text-gold transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-      ),
-    },
-    {
-      name: "주차",
-      icon: (
-        <svg className="w-8 h-8 text-zinc-500 group-hover:text-gold transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2zM9 9h6" />
-          <circle cx="8" cy="14" r="2" strokeWidth={1.5} />
-          <circle cx="16" cy="14" r="2" strokeWidth={1.5} />
+          <rect x="4" y="4" width="16" height="16" rx="3" strokeWidth={1.5} />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 16V8h3a2.5 2.5 0 010 5h-3" />
         </svg>
       ),
     },
@@ -34,8 +25,12 @@ export default function Facilities() {
       name: "애완동물 동반",
       icon: (
         <svg className="w-8 h-8 text-zinc-500 group-hover:text-gold transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          {/* Simple Pet Icon */}
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+          {/* Paw print */}
+          <circle cx="6" cy="10.5" r="1.7" strokeWidth={1.5} />
+          <circle cx="10" cy="7" r="1.7" strokeWidth={1.5} />
+          <circle cx="14" cy="7" r="1.7" strokeWidth={1.5} />
+          <circle cx="18" cy="10.5" r="1.7" strokeWidth={1.5} />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 12.5c-2.6 0-4.7 2.1-4.7 4.2 0 1.5 1.2 2.6 2.6 2.6.8 0 1.4-.3 2.1-.3s1.3.3 2.1.3c1.4 0 2.6-1.1 2.6-2.6 0-2.1-2.1-4.2-4.7-4.2z" />
         </svg>
       ),
     },
@@ -43,7 +38,12 @@ export default function Facilities() {
       name: "남/녀 화장실 구분",
       icon: (
         <svg className="w-8 h-8 text-zinc-500 group-hover:text-gold transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4a2 2 0 100-4 2 2 0 000 4zM9 11h6a1 1 0 011 1v6a1 1 0 01-1 1h-1v3a1 1 0 01-2 0v-3H9v3a1 1 0 01-2 0v-3H6a1 1 0 01-1-1v-6a1 1 0 011-1h3zm6-7a2 2 0 100-4 2 2 0 000 4z" />
+          {/* Male / divider / female pictograms */}
+          <circle cx="7" cy="4.8" r="1.8" strokeWidth={1.5} />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 7.5v5.5m0 0l-1.8 6.2M7 13l1.8 6.2M4.3 9.3h5.4" />
+          <path strokeLinecap="round" strokeWidth={1.2} d="M12 4v16" />
+          <circle cx="17" cy="4.8" r="1.8" strokeWidth={1.5} />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 7.5l-2.4 6.7h4.8L17 7.5zm-1.2 6.7v5m2.4-5v5" />
         </svg>
       ),
     },
@@ -51,9 +51,20 @@ export default function Facilities() {
       name: "장애인 편의시설",
       icon: (
         <svg className="w-8 h-8 text-zinc-500 group-hover:text-gold transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          {/* Wheelchair simple icon */}
-          <circle cx="12" cy="5" r="2" strokeWidth={1.5} />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 13a4 4 0 004 4h3m-5 4v-8l3-3m0 0l2 2m-2-2H9" />
+          {/* Wheelchair icon */}
+          <circle cx="10" cy="4.3" r="1.8" strokeWidth={1.5} />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6.5v6.5h5.5l2.5 5.5" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.3 19.4a4.6 4.6 0 11-6.6-6.2" />
+        </svg>
+      ),
+    },
+    {
+      name: "예약",
+      icon: (
+        <svg className="w-8 h-8 text-zinc-500 group-hover:text-gold transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          {/* Calendar with check */}
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 14.5l2 2 4-4" />
         </svg>
       ),
     },
